@@ -10,7 +10,7 @@ iris_prediction = IrisPredictionHandler()
 iris_trainer = IrisModelTrainingHandler()
 
 
-@router.post(IrisRoutes.prediction)
+@router.post(IrisRoutes.prediction, tags=["Iris", "Prediction"])
 def router_iris_prediction(
     sepal_length_cm: float,
     sepal_width_cm: float,
@@ -27,6 +27,6 @@ def router_iris_prediction(
     return iris_prediction.single_prediction(params)
 
 
-@router.post(IrisRoutes.train)
+@router.post(IrisRoutes.train, tags=["Iris", "Train"])
 def router_iris_train() -> bool:
     return iris_trainer.retrain_model()

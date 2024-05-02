@@ -1,0 +1,9 @@
+[[pages]]
+path = "src/frontend/app.py"
+name = "Home"
+icon = "🧮"
+
+[[pages]]
+path = "src/frontend/pages/retrain.py"
+name = "Retrain model"
+icon = "⚙️"

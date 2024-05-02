@@ -1,6 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+
+# from fastapi.middleware.cors import CORSMiddleware
 from fastapi.routing import APIRouter
 
 from src.backend.config.iris import settings
@@ -10,12 +11,21 @@ app = FastAPI(
     title=settings.API_NAME,
     version=settings.API_VERSION,
 )
-app.add_middleware(
-    CORSMiddleware,
-    allow_credentials=False,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+
+# If need be
+
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_credentials=False,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+
+
+@app.get("/health", tags=["health check"])
+async def root() -> dict[str, str]:
+    return {"status": "ON"}
+
 
 router = APIRouter()
 router.include_router(iris_router)

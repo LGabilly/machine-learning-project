@@ -2,12 +2,11 @@ import logging
 import sys
 from pathlib import Path
 
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings
 from pythonjsonlogger import jsonlogger
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env")
     PROJ_NAME: str = "Complete machine learning api"
     LOG_LEVEL: str = "DEBUG"
     PROJ_DIR: Path = Path(__file__).parent

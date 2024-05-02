@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: src/backend/Dockerfile
+    ports:
+      - "8084:8084"
+    networks:
+      - my_network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: src/frontend/Dockerfile
+    ports:
+      - "8504:8504"
+    networks:
+      - my_network
+    environment:
+      - BACKEND_URL=http://backend:8084  # URL du backend pour la communication depuis le frontend
+
+networks:
+  my_network:
+    driver: bridge
