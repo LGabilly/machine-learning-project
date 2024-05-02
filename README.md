@@ -33,6 +33,10 @@ Une fois que les services backend et frontend sont en cours d'exécution, ouvrez
 Vous serez accueilli par une interface utilisateur où vous pourrez définir les caractéristiques de l'iris à prédire à l'aide des curseurs. Une fois que vous avez défini les caractéristiques, vous obtiendrez le résultat de la prédiction.
 
 Si aucune prediction n'apparait, aucun modèle n'est présent dans votre système. Rendez-vous sur la page "Retrain model" et cliquez sur le bouton "Re-Train Model".
+
+Vous pouvez également accéder au backend directement à l'URL suivante :
+- Backend : http://localhost:8084/docs
+
 ## Auteurs
 
 - Louis Gabilly - Data Scientist
