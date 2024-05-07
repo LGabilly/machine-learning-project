@@ -28,5 +28,5 @@ def router_iris_prediction(
 
 
 @router.post(IrisRoutes.train, tags=["Iris", "Train"])
-def router_iris_train() -> bool:
+def router_iris_train() -> float:
     return iris_trainer.retrain_model()

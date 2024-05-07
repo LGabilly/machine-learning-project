@@ -3,10 +3,10 @@ from src.core.model_training import train
 
 
 class IrisModelTrainingHandler:
-    def retrain_model(self) -> bool:
+    def retrain_model(self) -> float:
         logger.info("retrain_model called")
-        train()
-        return True
+        accuracy = train()
+        return accuracy
 
 
 iris_prediction_handler = IrisModelTrainingHandler()
